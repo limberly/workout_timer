@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 
+// Show list of saved workouts
 const ShowSavedWorkouts = (props) => {
   const keys = Object.keys(localStorage);
   const workoutKeys = keys.map(k => <li key={k}>{k} <UseWorkout setWorkouts={props.setWorkouts} workout={k}/></li>);
@@ -10,6 +11,7 @@ const ShowSavedWorkouts = (props) => {
     );
 };
 
+// Button to use a workout from the list of saved workouts
 const UseWorkout = (props) => {
   const useWorkout = () => {
     const workouts = JSON.parse(localStorage.getItem(props.workout));
